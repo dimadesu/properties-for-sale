@@ -6,6 +6,7 @@
     "autoprefixer": "7.1.2",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
+    "classnames": "^2.2.5",
     "css-loader": "0.28.4",
     "dotenv": "4.0.0",
     "extract-text-webpack-plugin": "3.0.0",
@@ -20,6 +21,9 @@
     "react": "^16.1.1",
     "react-dev-utils": "^4.0.1",
     "react-dom": "^16.1.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "source-map-loader": "^0.2.1",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
@@ -38,13 +42,21 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "tslint": "tslint ./src/**/*.ts"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.3",
+    "@types/enzyme": "^3.1.4",
+    "@types/enzyme-adapter-react-16": "^1.0.1",
     "@types/jest": "^21.1.6",
     "@types/node": "^8.0.52",
     "@types/react": "^16.0.22",
-    "@types/react-dom": "^16.0.3"
+    "@types/react-dom": "^16.0.3",
+    "@types/react-redux": "^5.0.12",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "react-test-renderer": "^16.1.1"
   },
   "jest": {
     "mapCoverage": true,
