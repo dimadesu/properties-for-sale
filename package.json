@@ -43,7 +43,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "tslint": "tslint ./src/**/*.ts --project tslint.json"
+    "tslint": "tslint ./src/**/*.{ts,tsx} --project tslint.json"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.3",
