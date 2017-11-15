@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { App } from './App';
 
 const props = {
-  dispatch(){},
+  dispatch() { },
   properties: [
     {
       price: '$500,000',
@@ -21,7 +21,7 @@ const props = {
 
 describe('App', () => {
   it('Does not crash', () => {
-      expect(shallow(<App {...props}/>).length).toBe(1);
+    expect(shallow(<App {...props} />).length).toBe(1);
   });
 });
 
