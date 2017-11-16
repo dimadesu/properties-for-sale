@@ -79,4 +79,9 @@ describe('SavedProperties', () => {
       ).toEqual(2);
     }
   );
+
+  it('"Saved Properties" will contain the initial property');
+  it('Hovering over a property card in the "Saved Properties" column will display a "Remove" button');
+  it('Clicking the "Remove" button will remove the property from the "Saved Properties"');
+
 });

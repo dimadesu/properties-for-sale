@@ -3,6 +3,7 @@ import {
 } from '../types/index';
 
 import { Results } from '../components/Results';
+import { SavedProperties } from '../components/SavedProperties';
 import './App.css';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
@@ -24,7 +25,14 @@ export class App extends React.Component<Props, {}> {
     return (
       <div className="app">
         <h1>Properties For Sale App</h1>
-        <Results properties={this.props.properties} />
+        <div className="cols">
+          <div className="col">
+            <Results properties={this.props.properties} />
+          </div>
+          <div className="col">
+            <SavedProperties properties={[]} />
+          </div>
+        </div>
       </div>
     );
   }

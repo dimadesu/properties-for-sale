@@ -79,4 +79,6 @@ describe('Results', () => {
       ).toEqual(2);
     }
   );
+  
+  it('Hovering over a property card in the "Results" column will display an "Add" button');
 });
