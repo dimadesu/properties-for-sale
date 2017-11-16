@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Results } from './Results';
+import { Property } from './Property';
 
 describe('Results', () => {
   const property = {
@@ -20,7 +21,15 @@ describe('Results', () => {
     Object.assign({}, property, {
       id: '2',
     }),
-  ];
+  ].map(_property => {
+    return (
+      <Property
+        property={_property}
+        isAddButton={true}
+        key={_property.id}
+      />
+    );
+  });
   
   it(
     'Does not crash',
@@ -80,5 +89,11 @@ describe('Results', () => {
     }
   );
   
-  it('Hovering over a property card in the "Results" column will display an "Add" button');
+  it('Hovering over a property card in the "Results" column will display an "Add" button', () => {
+    const wrapper = mount(
+      <Results properties={properties} />
+    );
+    
+    expect(wrapper.find('.property__add-button').length).toBeGreaterThan(0);
+  });
 });

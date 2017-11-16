@@ -37,6 +37,4 @@ describe('App', () => {
     expect(wrapper.find('.results').length).toBe(1);
     expect(wrapper.find('.saved_properties').length).toBe(1);
   });
-
-  it('Clicking the "Add" button will create the property in the "Saved Properties"');
 });

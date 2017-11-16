@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import { SavedProperties } from './SavedProperties';
+import { Property } from './Property';
 
 describe('SavedProperties', () => {
   const property = {
@@ -20,7 +21,15 @@ describe('SavedProperties', () => {
     Object.assign({}, property, {
       id: '2',
     }),
-  ];
+  ].map(_property => {
+    return (
+      <Property
+        property={_property}
+        isAddButton={false}
+        key={_property.id}
+      />
+    );
+  });
   
   it(
     'Does not crash',
@@ -83,8 +92,12 @@ describe('SavedProperties', () => {
   // TODO: this test case does not make sense in a way, since it is a runtime thing
   // it('"Saved Properties" will contain the initial property');
 
-  it('Hovering over a property card in the "Saved Properties" column will display a "Remove" button');
-
-  it('Clicking the "Remove" button will remove the property from the "Saved Properties"');
+  it('Hovering over a property card in the "Saved Properties" column will display a "Remove" button', () => {
+    const wrapper = mount(
+      <SavedProperties properties={properties} />
+    );
+    
+    expect(wrapper.find('.property__remove-button').length).toBeGreaterThan(0);
+  });
 
 });

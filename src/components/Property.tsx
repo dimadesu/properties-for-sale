@@ -6,21 +6,45 @@ export const Property = (
   props: {
     property: PropertyModel;
     isAddButton: boolean;
+    addToSaved?: Function;
+    removeFromSaved?: Function;
   }
 ) => {
   const {
     property,
-    isAddButton
+    isAddButton,
+    addToSaved,
+    removeFromSaved,
   } = props;
 
   function renderButton () {
     if (isAddButton) {
       return (
-        <button type="button" className="property__add-button">Add</button>
+        <button
+          type="button"
+          className="property__add-button"
+          onClick={() => {
+            if (addToSaved) {
+              addToSaved(property);
+            }
+          }}
+        >
+          Add
+        </button>
       );
     } else {
       return (
-        <button type="button" className="property__remove-button">Remove</button>
+        <button
+          type="button"
+          className="property__remove-button"
+          onClick={() => {
+            if (removeFromSaved) {
+              removeFromSaved(property.id);
+            }
+          }}
+        >
+          Remove
+        </button>
       );
     }
   }

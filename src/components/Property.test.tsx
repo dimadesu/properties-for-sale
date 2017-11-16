@@ -73,4 +73,36 @@ describe('Property', () => {
     expect(wrapper.find('.property__add-button').length).toEqual(0);
     expect(wrapper.find('.property__remove-button').length).toEqual(1);
   });
+  
+  it('Clicking the "Remove" button will remove the property from the "Saved Properties"', () => {
+    const removeFromSaved = jest.fn();
+
+    const wrapper = shallow(
+      <Property
+        {...props}
+        isAddButton={false}
+        removeFromSaved={removeFromSaved}
+      />
+    );
+
+    wrapper.find('.property__remove-button').simulate('click');
+
+    expect(removeFromSaved.mock.calls.length).toEqual(1);
+  });
+
+  it('Clicking the "Add" button will create the property in the "Saved Properties"', () => {
+    const addToSaved = jest.fn();
+
+    const wrapper = shallow(
+      <Property
+        {...props}
+        isAddButton={true}
+        addToSaved={addToSaved}
+      />
+    );
+
+    wrapper.find('.property__add-button').simulate('click');
+
+    expect(addToSaved.mock.calls.length).toEqual(1);
+  });
 });
