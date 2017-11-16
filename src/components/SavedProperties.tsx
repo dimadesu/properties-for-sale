@@ -4,12 +4,13 @@ import { PropertyModel } from '../types/index';
 import { Property } from './Property';
 
 export const SavedProperties = (
-  {
-    properties
-  }: {
+  props: {
     properties: PropertyModel[];
   }
 ) => {
+  const {
+    properties
+  } = props;
 
   const renderProperties = () => {
     return properties.map(property => (

@@ -1,4 +1,4 @@
-import { Action, Dispatch } from 'redux';
+import { AnyAction, Dispatch } from 'redux';
 import {
   LOADING_PROPERTIES_SUCCEEDED,
 } from '../constants/properties';
@@ -9,7 +9,7 @@ export const loadingPropertiesSucceeded = (properties: PropertyModel[]) => ({
   properties,
 });
 
-export const loadProperties = () => (dispatch: Dispatch<Action>) => {
+export const loadProperties = () => (dispatch: Dispatch<AnyAction>) => {
   return fetch('/results.json')
     .then((response) => response.json())
     .then((json) => {

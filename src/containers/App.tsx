@@ -1,5 +1,6 @@
 import {
-  StoreState, CustomAction,
+  StoreState,
+  ContainerProps,
 } from '../types/index';
 
 import { Results } from '../components/Results';
@@ -7,16 +8,12 @@ import { SavedProperties } from '../components/SavedProperties';
 import './App.css';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
-import { connect, Dispatch, ActionCreator } from 'react-redux';
+import { connect, ActionCreator } from 'react-redux';
 
 // Actions
 import { loadProperties } from '../actions/properties';
 
-interface Props extends StoreState {
-  dispatch: Dispatch<CustomAction>;
-}
-
-export class App extends React.Component<Props, {}> {
+export class App extends React.Component<ContainerProps, {}> {
   componentDidMount() {
     bindActionCreators<ActionCreator<{}>>(loadProperties, this.props.dispatch)();
   }
@@ -30,7 +27,7 @@ export class App extends React.Component<Props, {}> {
             <Results properties={this.props.properties} />
           </div>
           <div className="col">
-            <SavedProperties properties={[]} />
+            <SavedProperties properties={this.props.savedProperties} />
           </div>
         </div>
       </div>
@@ -38,9 +35,10 @@ export class App extends React.Component<Props, {}> {
   }
 }
 
-const mapStateToProps = (state: Props) => {
+const mapStateToProps = (state: StoreState) => {
   return {
     properties: state.properties,
+    savedProperties: state.savedProperties,
   };
 };
 

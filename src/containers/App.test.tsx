@@ -2,24 +2,31 @@ import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import { App } from './App';
 
-const props = {
-  dispatch() {}, // tslint:disable-line:no-empty
-  properties: [
-    {
-      price: '$500,000',
-      agency: {
-        brandingColors: {
-          primary: ''
-        },
-        logo: '',
-      },
-      id: '1',
-      mainImage: '',
-    },
-  ],
-};
-
 describe('App', () => {
+  const property = {
+    price: '$500,000',
+    agency: {
+      brandingColors: {
+        primary: ''
+      },
+      logo: '',
+    },
+    id: '1',
+    mainImage: '',
+  };
+  
+  const props = {
+    dispatch() {
+      return {};
+    },
+    properties: [
+      property,
+    ],
+    savedProperties: [
+      property,
+    ],
+  };
+
   it('Does not crash', () => {
     expect(shallow(<App {...props} />).length).toBe(1);
   });

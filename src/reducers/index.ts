@@ -1,15 +1,21 @@
-import { properties } from './properties';
+import {
+  properties,
+} from './properties';
+import {
+  savedProperties,
+} from './saved-properties';
 import {
   StoreState,
-  CustomAction,
 } from '../types/index';
+import { AnyAction } from 'redux';
 
 function rootReducer(
   state: StoreState,
-  action: CustomAction
+  action: AnyAction
 ) {
   return {
     properties: properties(state.properties, action),
+    savedProperties: savedProperties(state.savedProperties, action),
   };
 }
 
