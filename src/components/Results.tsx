@@ -13,7 +13,11 @@ export const Results = (
 
   const renderProperties = () => {
     return properties.map(property => (
-      <Property {...property} key={property.id} />
+      <Property
+        property={property}
+        isAddButton={true}
+        key={property.id}
+      />
     ));
   };
 

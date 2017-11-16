@@ -14,7 +14,11 @@ export const SavedProperties = (
 
   const renderProperties = () => {
     return properties.map(property => (
-      <Property {...property} key={property.id} />
+      <Property
+        property={property}
+        isAddButton={false}
+        key={property.id}
+      />
     ));
   };
 

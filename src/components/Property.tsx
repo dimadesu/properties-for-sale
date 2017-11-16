@@ -3,8 +3,28 @@ import * as React from 'react';
 import { PropertyModel } from '../types/index';
 
 export const Property = (
-  property: PropertyModel
+  props: {
+    property: PropertyModel;
+    isAddButton: boolean;
+  }
 ) => {
+  const {
+    property,
+    isAddButton
+  } = props;
+
+  function renderButton () {
+    if (isAddButton) {
+      return (
+        <button type="button" className="property__add-button">Add</button>
+      );
+    } else {
+      return (
+        <button type="button" className="property__remove-button">Remove</button>
+      );
+    }
+  }
+
   return (
     <div
       className="property"
@@ -16,8 +36,7 @@ export const Property = (
         <div className="property__logo"><img src={property.agency.logo}/></div>
       </div>
       <div className="property__buttons">
-        <button type="button">Add</button>
-        <button type="button">Remove</button>
+        {renderButton()}
       </div>
     </div>
   );

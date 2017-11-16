@@ -4,15 +4,18 @@ import { Property } from './Property';
 
 describe('Property', () => {
   const props = {
-    price: '$500,000',
-    agency: {
-      brandingColors: {
-        primary: ''
+    property: {
+      price: '$500,000',
+      agency: {
+        brandingColors: {
+          primary: ''
+        },
+        logo: '',
       },
-      logo: '',
+      id: '1',
+      mainImage: '',
     },
-    id: '1',
-    mainImage: '',
+    isAddButton: true,
   };
 
   it('Does not crash', () => {
@@ -51,5 +54,23 @@ describe('Property', () => {
     );
 
     expect(wrapper.find('.property__photo').length).toEqual(1);
+  });
+
+  it('Renders Add button when isAddButton false', () => {
+    const wrapper = shallow(
+      <Property {...props} />
+    );
+
+    expect(wrapper.find('.property__add-button').length).toEqual(1);
+    expect(wrapper.find('.property__remove-button').length).toEqual(0);
+  });
+
+  it('Renders Remove button when isAddButton false', () => {
+    const wrapper = shallow(
+      <Property {...props} isAddButton={false} />
+    );
+
+    expect(wrapper.find('.property__add-button').length).toEqual(0);
+    expect(wrapper.find('.property__remove-button').length).toEqual(1);
   });
 });
