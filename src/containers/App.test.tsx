@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { App } from './App';
 
 const props = {
-  dispatch() { },
+  dispatch() {}, // tslint:disable-line:no-empty
   properties: [
     {
       price: '$500,000',
