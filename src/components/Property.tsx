@@ -15,6 +15,10 @@ export const Property = (
         <div className="property__price">Price: {property.price}</div>
         <div className="property__logo"><img src={property.agency.logo}/></div>
       </div>
+      <div className="property__buttons">
+        <button type="button">Add</button>
+        <button type="button">Remove</button>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,9 @@
 .app {
   width: 960px;
   margin: 0 auto 50px;
+  background-color: white;
+  padding: 32px;
+  box-shadow: 0 0 10px 10px rgba(49, 104, 49, 0.7);
 }
 
 .cols {
