@@ -28,6 +28,8 @@ describe('savedProperties reducer', () => {
     expect(nextState).toEqual(
       [property]
     );
+
+    // Disallow adding duplicates
     
     const nextState2 = savedProperties(
       nextState,
@@ -37,9 +39,9 @@ describe('savedProperties reducer', () => {
       },
     );
 
-    expect(nextState2.length).toBe(2);
+    expect(nextState2.length).toBe(1);
     expect(nextState2).toEqual(
-      [property, property]
+      [property]
     );
   });
 
