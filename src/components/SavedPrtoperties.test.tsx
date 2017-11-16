@@ -89,9 +89,6 @@ describe('SavedProperties', () => {
     }
   );
 
-  // TODO: this test case does not make sense in a way, since it is a runtime thing
-  // it('"Saved Properties" will contain the initial property');
-
   it('Hovering over a property card in the "Saved Properties" column will display a "Remove" button', () => {
     const wrapper = mount(
       <SavedProperties properties={properties} />
