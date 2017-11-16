@@ -2,7 +2,7 @@ import {
   StoreState,
 } from '../types/index';
 
-import { Property } from '../components/Property';
+import { Results } from '../components/Results';
 import './App.css';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
@@ -20,19 +20,11 @@ export class App extends React.Component<Props, any> {
     bindActionCreators<any>(loadProperties, this.props.dispatch)();
   }
 
-  renderProperties() {
-    return this.props.properties.map(property => (
-      <Property {...property} key={property.id} />
-    ));
-  }
-
   render() {
     return (
       <div className="app">
-        TODO: render results
-        <div className="results">
-          {this.renderProperties()}
-        </div>
+        <h1>Properties For Sale App</h1>
+        <Results properties={this.props.properties} />
       </div>
     );
   }

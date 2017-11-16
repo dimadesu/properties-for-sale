@@ -25,13 +25,6 @@ describe('App', () => {
   });
 });
 
-it(
-  `Display the list of properties
-  using the dataset within the "Results" array
-  running down the page in a column
-  that has a heading labeled "Results"`
-);
-
 it('There will be a second column with a heading "Saved Properties", along side the "Results" column');
 it('"Saved Properties" will contain the initial property');
 
