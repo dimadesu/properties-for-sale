@@ -11,3 +11,11 @@
 .col {
   flex: 1;
 }
+
+.col:first-child {
+  padding-right: 10px;
+}
+
+.col:last-child {
+  padding-left: 10px;
+}

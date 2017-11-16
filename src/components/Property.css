@@ -1,1 +1,28 @@
-.property {}
+.property {
+  background: #eee;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 12px;
+}
+
+.property__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+  margin-top: 16px;
+}
+
+.property__id {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.property__photo img {
+  display: block;
+  width: 100%;
+}
+
+.property__logo {
+  text-align: right;
+}

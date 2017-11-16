@@ -29,6 +29,14 @@ describe('Property', () => {
     expect(wrapper.find('.property__id').length).toEqual(1);
   });
 
+  it('Renders price', () => {
+    const wrapper = shallow(
+      <Property {...props} />
+    );
+
+    expect(wrapper.find('.property__price').length).toEqual(1);
+  });
+
   it('Renders logo', () => {
     const wrapper = shallow(
       <Property {...props} />
