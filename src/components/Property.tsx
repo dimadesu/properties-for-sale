@@ -8,6 +8,7 @@ export const Property = (
     isAddButton: boolean;
     addToSaved?: Function;
     removeFromSaved?: Function;
+    addToGrayListed?: Function;
   }
 ) => {
   const {
@@ -15,6 +16,7 @@ export const Property = (
     isAddButton,
     addToSaved,
     removeFromSaved,
+    addToGrayListed,
   } = props;
 
   function renderButton () {
@@ -49,6 +51,38 @@ export const Property = (
     }
   }
 
+  function renderButton2 () {
+    if (isAddButton) {
+      return (
+        <button
+          type="button"
+          className="property__add-button"
+          onClick={() => {
+            if (addToGrayListed) {
+              addToGrayListed(property);
+            }
+          }}
+        >
+          Hide
+        </button>
+      );
+    } else {
+      return (
+        <button
+          type="button"
+          className="property__remove-button"
+          onClick={() => {
+            if (removeFromSaved) {
+              removeFromSaved(property.id);
+            }
+          }}
+        >
+          Show
+        </button>
+      );
+    }
+  }
+
   return (
     <div
       className="property"
@@ -61,6 +95,7 @@ export const Property = (
       </div>
       <div className="property__buttons">
         {renderButton()}
+        {renderButton2()}
       </div>
     </div>
   );

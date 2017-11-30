@@ -17,6 +17,10 @@ import {
   addToSaved,
   removeFromSaved
 } from '../actions/saved-properties';
+import {
+  addToGraylisted, /*
+  removeFromGraylisted */
+} from '../actions/graylisted-properties';
 import { Property } from '../components/Property';
 
 export class App extends React.Component<ContainerProps, {}> {
@@ -31,6 +35,7 @@ export class App extends React.Component<ContainerProps, {}> {
         isAddButton={true}
         key={_property.id}
         addToSaved={(property: PropertyModel) => this.props.dispatch(addToSaved(property))}
+        addToGrayListed={(property: PropertyModel) => this.props.dispatch(addToGraylisted(property))}
       />
     ));
   }
@@ -71,6 +76,7 @@ const mapStateToProps = (state: StoreState) => {
   return {
     properties: state.properties,
     savedProperties: state.savedProperties,
+    grayListedProperties: state.grayListedProperties,
   };
 };
 

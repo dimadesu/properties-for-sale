@@ -1,0 +1,2 @@
+export const ADD_TO_GRAYLISTED: string = 'ADD_TO_GRAYLISTED';
+export const REMOVE_FROM_GRAYLISTED: string = 'REMOVE_FROM_GRAYLISTED';

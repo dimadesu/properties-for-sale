@@ -31,10 +31,7 @@
 }
 
 .property__buttons {
-  display: none;
-}
-
-.property:hover .property__buttons {
+  /* display: none; */
   position: absolute;
   top: 0;
   left: 0;
@@ -43,6 +40,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.property:hover .property__buttons {
 }
 
 button {

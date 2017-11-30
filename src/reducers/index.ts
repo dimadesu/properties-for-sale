@@ -16,6 +16,7 @@ function rootReducer(
   return {
     properties: properties(state.properties, action),
     savedProperties: savedProperties(state.savedProperties, action),
+    grayListedProperties: savedProperties(state.grayListedProperties, action),
   };
 }
 

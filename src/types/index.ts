@@ -16,6 +16,7 @@ export interface PropertyModel {
 export interface StoreState {
   properties: PropertyModel[];
   savedProperties: PropertyModel[];
+  grayListedProperties: PropertyModel[];
 }
 
 export interface LoadingPropertiesSucceeded extends Action {
@@ -33,6 +34,8 @@ export interface RemoveFromSavedAction extends Action {
   type: 'REMOVE_FROM_SAVED';
   propertyId: string;
 }
+
+//
 
 export interface ContainerProps extends StoreState {
   dispatch: Dispatch<{}>;
